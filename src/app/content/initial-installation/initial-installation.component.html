@@ -1,0 +1,67 @@
+<section class="text-right container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1>התקנה ראשונית של Angular</h1>
+      <h3 class="pt-3">התקנת Angular CLI</h3>
+      <p>
+        בעזרת ה-CLI אנחנו יוצרים פרוייקטים, מקימים סיפריות חדשות, משימות פיתוח
+        ופעולות נוספות. בכדי להתקין את ה- CLI:
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >npm install -g @angular/cli</code
+      >
+      <hr />
+      <h3 class="pt-3">יצירת פרוייקט וסביבת עבודה חדשה</h3>
+      <p>
+        נריץ את הפקודה ng new עם שם הפרוייקט:
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >ng new my-project-name</code
+      >
+      <p>
+        מייד לאחר מכן אנו נשאל אם אנחנו רוצים Angular routing, נבחר
+        <span><strong>לא</strong></span>
+        ואז נשאל אם אנו רוצים להשתמש ב-<span
+          ><strong>css/sass/scss</strong></span
+        >.. בחרו באופציה שמתאימה לכם.
+      </p>
+      <hr />
+      <h3 class="pt-3">הפעלת האפליקציה לראשונה</h3>
+      <p>
+        וודאו שאתם נמצאים בסיפריה הנכונה, הסיפריה תהיה השם שנתתם לפרוייקט
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >cd my-project-name</code
+      >
+      <p>
+        האפליקציה מכילה שרת מקומי כמו nodemon כשעובדים על פרוייקט של Node.js
+        והפקודה להריץ אותה היא:
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >ng serve --open
+      </code>
+      <p>או בקצרה:</p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded">ng serve -o</code>
+      <p>
+        <strong
+          >ברירת המחדל של פורט השרת היא 4200, בכדי לשנות לפורט אחר:</strong
+        >
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >ng serve -o --port=you-different-port-number</code
+      >
+      <hr />
+      <h3 class="pt-3">ייצוא פרוייקט</h3>
+      <p>
+        בכדי לייצא פרוייקט דרך ה- CLI צריך להקליד:
+      </p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >ng build my-project-name --prod</code
+      >
+      <p>או בקצרה:</p>
+      <code class="d-inline-block p-3 mb-2 bg-light rounded"
+        >ng b my-project-name --prod</code
+      >
+    </div>
+  </div>
+</section>
