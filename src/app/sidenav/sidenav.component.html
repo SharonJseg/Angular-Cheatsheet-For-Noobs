@@ -1,7 +1,9 @@
 <div class="sidebar">
-  <ul class="nav list-group list-group-flush">
+  <ul class="nav list-group list-group-flush px-0">
     <li *ngFor="let item of sideNavItems" class="list-group-item">
-      <a href="" class="nav-link text-right">{{ item.title }}</a>
+      <a [routerLink]="item.link" href="#" class="nav-link text-right">{{
+        item.title
+      }}</a>
     </li>
   </ul>
 </div>

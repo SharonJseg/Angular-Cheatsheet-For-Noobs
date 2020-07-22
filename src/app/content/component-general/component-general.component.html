@@ -1,0 +1,96 @@
+<section class="text-right container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="border-bottom pb-3">קומפוננטות</h1>
+
+      <div>
+        <h3 class="pt-3">מבנה הקומפוננט</h3>
+        <p>
+          כל קומפוננט מורכב משלושה חלקים עיקריים :
+        </p>
+        <ul>
+          <li><em>Selector</em> - מציג את התגית הייחודית של הקומפוננט</li>
+          <li><em>TemplateURL \ Template</em> - מציג את ה-HTML של הקומפוננט</li>
+          <li>
+            <em>StylesUrl \ Styles</em> - מציג את הסטייל הייחודי של הקומפוננט
+          </li>
+        </ul>
+        <p>וכולם יהיו בתוך דקורטור בשם <code>component@</code> לדוגמא :</p>
+        <code
+          dir="ltr"
+          class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+        >
+          &#64;Component&#40;&#123;
+          <br />
+          selector: 'app-my-component',
+          <br />templateUrl: './my-component.component.html',
+          <br />
+          stylesUrl: &#91;'./my-component.css'&#93;,
+          <br />&#125;&#41;
+        </code>
+        <p>בנוסף יווצר בכל קומפוננט גם קובץ Specs</p>
+        <code
+          class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+          >my-component.component.spec.ts</code
+        >
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">יצירת קומפוננט</h3>
+        <p>
+          בכדי ליצור קומפוננט יש להקליד:
+        </p>
+        <code class="d-inline-block p-3 mb-2 bg-light rounded"
+          >ng generate component &lt;component name&gt; [options]
+        </code>
+        <p>או בקצרה:</p>
+        <code class="d-inline-block p-3 mb-2 bg-light rounded"
+          >ng g c &lt;component name&gt; [options]
+        </code>
+        <p>ניתן ליצור קומפוננט ללא שאר הקבצים. לדוגמא, ללא קובץ HTML :</p>
+        <code class="d-inline-block p-3 mb-2 bg-light rounded"
+          >ng g c &lt;component name&gt; -t
+        </code>
+        <p>
+          האופציות העיקריות :
+        </p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>האופציות</th>
+              <th>תיאור</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>t-</code></td>
+              <td>
+                בכדי ליצור קומפוננט ללא קובץ HTML
+              </td>
+            </tr>
+            <tr>
+              <td><code>s-</code></td>
+              <td>
+                בכדי ליצור קומפוננט ללא קובץ CSS / SCSS etc..
+              </td>
+            </tr>
+            <tr>
+              <td><code>skipTests--</code></td>
+              <td>
+                בכדי ליצור קומפוננט ללא קובץ SPECS
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code dir="ltr">-t -s --skipTests</code>
+              </td>
+              <td>
+                ניתן לשלב את האופציות
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

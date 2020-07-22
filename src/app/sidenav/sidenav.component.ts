@@ -13,8 +13,14 @@ export class SidenavComponent implements OnInit {
       link: 'getting-started',
     },
     {
-      title: 'Setup ראשוני',
-      link: 'create-new-project',
+      title: 'קומפוננטות - Components',
+      link: 'components-general',
+      children: [
+        {
+          title: 'Test',
+          link: 'test link',
+        },
+      ],
     },
   ];
   constructor() {}
