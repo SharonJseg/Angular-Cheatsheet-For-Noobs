@@ -4,7 +4,13 @@ import { SideNavItem } from '../intefaces/side-nav-item';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styles: [],
+  styles: [
+    `
+      .sidebar {
+        position: fixed;
+      }
+    `,
+  ],
 })
 export class SidenavComponent implements OnInit {
   @Output() sideNavItems: SideNavItem[] = [

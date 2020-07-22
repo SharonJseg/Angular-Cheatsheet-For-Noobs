@@ -16,21 +16,20 @@
           </li>
         </ul>
         <p>וכולם יהיו בתוך דקורטור בשם <code>component@</code> לדוגמא :</p>
-        <code
-          dir="ltr"
-          class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
-        >
-          &#64;Component&#40;&#123;
-          <br />
-          selector: 'app-my-component',
-          <br />templateUrl: './my-component.component.html',
-          <br />
-          stylesUrl: &#91;'./my-component.css'&#93;,
-          <br />&#125;&#41;
-        </code>
+        <pre><code
+dir="ltr"
+class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+style="width: 400px;">&#64;Component&#40;&#123;
+    selector: 'app-my-component',
+    templateUrl: './my-component.component.html',
+    stylesUrl: &#91;'./my-component.css'&#93;,
+    &#125;&#41;
+</code>
+</pre>
         <p>בנוסף יווצר בכל קומפוננט גם קובץ Specs</p>
         <code
           class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+          style="width: 400px;"
           >my-component.component.spec.ts</code
         >
       </div>
@@ -90,6 +89,45 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">Inline Elements בקומפוננט</h3>
+        <p>
+          במידה ולא יצרתם קובץ CSS או HTML, קובץ הקומפוננט ייראה כך :
+        </p>
+        <pre>
+<code
+dir="ltr"
+class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+style="width: 400px;">&#64;Component&#40;&#123;
+          selector: 'app-my-component',
+          template: '',
+          styles: &#91;&#93;,
+          &#125;&#41;</code>
+      </pre>
+        <p>
+          בכדי לכתוב קוד בתוך ה- inner template ועדיף לכתוב את הקוד בין
+          backticks ` ` כדי לשבור שורות לדוגמא:
+        </p>
+        <pre>
+<code
+dir="ltr"
+class="text-left d-inline-block p-3 mb-2 bg-dark text-warning rounded"
+style="width: 400px;">&#64;Component&#40;&#123;
+     selector: 'app-my-component',
+     template: `<span style="color: #20c997;"
+     >&lt;p&gt;
+                my html content
+                &lt;/p&gt; </span
+     >`,
+     styles: &#91;
+              `<span style="color: #20c997;">p &#123;
+                color: cyan;
+                &#125;</span>`
+             &#93;,
+             &#125;&#41;</code>
+      </pre>
       </div>
     </div>
   </div>
