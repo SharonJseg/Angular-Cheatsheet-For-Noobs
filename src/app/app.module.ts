@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { InitialInstallationComponent } from './content/initial-installation/initial-installation.component';
 import { ComponentGeneralComponent } from './content/component-general/component-general.component';
+import { ComponentBindingComponent } from './content/component-binding/component-binding.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ComponentGeneralComponent } from './content/component-general/component
     SidenavComponent,
     InitialInstallationComponent,
     ComponentGeneralComponent,
+    ComponentBindingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

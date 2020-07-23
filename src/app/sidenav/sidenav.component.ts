@@ -6,8 +6,11 @@ import { SideNavItem } from '../intefaces/side-nav-item';
   templateUrl: './sidenav.component.html',
   styles: [
     `
-      .sidebar {
-        position: fixed;
+      .sidenav {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
       }
     `,
   ],
@@ -23,8 +26,8 @@ export class SidenavComponent implements OnInit {
       link: 'components-general',
       children: [
         {
-          title: 'Test',
-          link: 'test link',
+          subtitle: 'איך מתקשרים בין האלמנטים',
+          sublink: 'components-binding',
         },
       ],
     },

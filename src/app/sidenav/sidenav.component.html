@@ -1,9 +1,21 @@
-<div class="sidebar">
+<div class="sidenav">
   <ul class="nav list-group list-group-flush px-0">
-    <li *ngFor="let item of sideNavItems" class="list-group-item">
-      <a [routerLink]="item.link" href="#" class="nav-link text-right">{{
+    <li *ngFor="let item of sideNavItems" class="list-group-item nav-item">
+      <a [routerLink]="item.link" class="nav-link text-right">{{
         item.title
       }}</a>
+      <ng-template [ngIf]="item.children">
+        <ul class="nav list-group list-group-flush px-0">
+          <li
+            *ngFor="let sub of item.children"
+            class="list-group-item nav-item"
+          >
+            <a [routerLink]="sub.sublink" class="nav-link text-right">{{
+              sub.subtitle
+            }}</a>
+          </li>
+        </ul>
+      </ng-template>
     </li>
   </ul>
 </div>

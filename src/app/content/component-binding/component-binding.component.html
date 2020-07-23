@@ -1,0 +1,126 @@
+<section class="text-right container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="border-bottom pb-3">Data binding - תקשורת בין האלמנטים</h1>
+
+      <div class="d-flex justify-content-lg-start">
+        <div>
+          <h3 class="pt-3">מבנה הקומפוננט</h3>
+          <p>בדר"כ, כל עוד לא הגדרנו אחרת קומפוננט יכיל שלושה קבצים</p>
+          <ul>
+            <li><em>app.component.ts</em> - קובץ ה-Typescript (javascript)</li>
+            <li><em>app.component.html</em> - קובץ ה-HTML</li>
+            <li><em>app.component.scss</em> קובץ ה-SCSS או ה-CSS.</li>
+          </ul>
+        </div>
+        <div>
+          <img
+            style="width: 400px;"
+            class="img-fluid p-4"
+            src="/assets/images/elements.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">הקשר בין ה-TS ל-HTML Data binding</h3>
+
+        <p>
+          זהו הקשר בין ה-HTML לבין הנתונים והלוגיקה, הקישור של הנתונים בין מקובץ
+          ה-TS לקובץ ה-HTML. לכל חלק ב-HTML יש קלאס המתאים לו ב-קובץ TS. וכל קטע
+          בקובץ ה-HTML יכול להשתמש בשדות המוגדרים בקלאס (קומפוננט) שלו ורק בהם.
+        </p>
+        <p>ישנם ארבעה סוגים עיקריים של קישור בין הלוגיקה לבין ה-html :</p>
+        <ol>
+          <li>String binding</li>
+          <li>Property binding</li>
+          <li>Event binding</li>
+          <li>Two-way binding</li>
+        </ol>
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">
+          1. String Binding (Interpolation) {{ interpolation }}
+        </h3>
+
+        <p>קישור נתונים של string יתבצע באמצעות {{ interpolation }} לדוגמא :</p>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.ts</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">export class myComponent&#123;
+       <strong>superHero: string = 'Sharon Segal'</strong>
+&#125;</code></pre>
+        </div>
+        <p>המשתנה superHero יוצג בתוך ה- h1.</p>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.html</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">&lt;h1&gt;<strong>{{superHero}}</strong>&lt;/h1&gt;</code></pre>
+        </div>
+        <p>
+          בתוך הסוגריים הכפולים ניתן להציג כל ערך שיכול לקבל המרה ל- string,
+          ניתן להכניס חישובים מספריים לדוגמא:
+        </p>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.html</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">&lt;h1&gt;<strong>1 + 1 = {{ calc }}</strong>&lt;/h1&gt;</code></pre>
+        </div>
+        <p>
+          ואפילו פונקציה שמחזירה ערך, כיון שהערך המוחזר מקבל המרה ל-string .זה
+          גם יכול להיות ערך בוליאני, וההמרה האוטומטית תהיה "false/true "לפי
+          הערך. לדוגמא:
+        </p>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.ts</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">export class myComponent&#123;
+       <strong>isFalse : boolean = false</strong>
+       &#125;</code></pre>
+        </div>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.html</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">&lt;h1&gt;<strong>{{ isFalse }}</strong>&lt;/h1&gt;</code></pre>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">2. Property Binding {{ propertyBind }}</h3>
+      </div>
+      <p>
+        שינוי ערכי ה-properties של תגית HTML תיווצר על ידי סוגריים מרובעות,
+        לדוגמא, ה-src של תגית התמונה תשתנה בהתאם לערך המקושר
+      </p>
+      <div class="example">
+        <div class="example__header">src/app/app.my-component.html</div>
+        <pre><code dir="ltr" class="code__snippet text-left d-block p-3">&lt;img <strong>&#91;src&#93;="itemImageUrl</strong>"&gt;</code></pre>
+      </div>
+      <div class="example">
+        <div class="example__header">src/app/app.my-component.ts</div>
+        <pre><code dir="ltr" class="code__snippet text-left d-block p-3">export class myComponent&#123;
+     <strong>itemImageUrl : string = 'insert img url'</strong>
+     &#125;</code></pre>
+      </div>
+      <hr />
+      <div>
+        <h3 class="pt-3">3. Event Binding {{ eventBind }}</h3>
+        <p>
+          ניתן לקרוא לפונקציות בקובץ ה-TS עם Events שאותם צריך לעטוף בסוגריים
+          עגולים לדוגמא :
+        </p>
+        <div class="example">
+          <div class="example__header">src/app/app.my-component.html</div>
+          <pre><code dir="ltr" class="code__snippet text-left d-block p-3">&lt;button <strong>{{clickBtn}}</strong>&gt;Click Me&lt;/button&gt;</code></pre>
+          <div class="example">
+            <div class="example__header">src/app/app.my-component.ts</div>
+            <pre><code dir="ltr" class="code__snippet text-left d-block p-3">export class myComponent&#123;
+       <strong>isRight: boolean = false;</strong>
+
+       <strong>enableBtn&#40;&#41;&#123;
+       <em>this</em>.isRight=true;
+       &#125;</strong>
+&#125;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
